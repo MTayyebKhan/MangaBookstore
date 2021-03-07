@@ -1,0 +1,6 @@
+<h1><%=@writer.name%></h1>
+
+<h2>Mangas:</h2>
+<% @writer.mangas.each do |manga|%>
+    <p class="pl-2"><%=link_to manga.title, manga_path(manga.id)%></p>
+<%end%>
