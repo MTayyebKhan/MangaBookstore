@@ -1,5 +1,5 @@
 <section class="card">
     <h1><%=manga.title%></h1>
     <p>Writer: <%=link_to manga.writer.name, writer_path(manga.writer.id)%></p>
-    <p>Genre: <%=manga.genre%></p>
+    <p>Genres: <%= manga.list_genres%></p>
 </section>

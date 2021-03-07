@@ -1,0 +1,4 @@
+class MangasGenre < ApplicationRecord
+  belongs_to :manga
+  belongs_to :genre
+end

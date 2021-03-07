@@ -1,0 +1,22 @@
+<h1>Add Manga</h1>
+
+<%= form_with model: @manga do |form|%>
+    <div class="p-2">
+        <%=form.label :title%>
+        <%=form.text_field :title, required:true%>
+    </div>
+    <div class="p-2">
+        <%=form.label :genre%>
+        <%=form.text_field :genre%>
+    </div>
+    <h2>Writer:</h2>
+    <div class="p-2">
+        <%=form.label :writer_first_name%>
+        <%=form.text_field :writer_first_name, required:true%>
+    </div>
+    <div class="p-2">
+        <%=form.label :writer_last_name%>
+        <%=form.text_field :writer_last_name, required:true%>
+    </div>
+    <%=form.submit "Add Manga"%>
+<%end%>
