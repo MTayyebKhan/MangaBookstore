@@ -1,5 +1,14 @@
 <nav class="content">
-<%=link_to "Mangas", mangas_path, class: "has-background-dark has-text-light p-2"%>
-<%=link_to "Writers", writers_path, class: "has-background-dark has-text-light p-2"%>
-<%=link_to "Add Manga", new_manga_path, class: "has-background-dark has-text-light p-2"%>
+    <%=link_to "Mangas", mangas_path, class: "has-background-dark has-text-light p-2"%>
+    <%=link_to "Writers", writers_path, class: "has-background-dark has-text-light p-2"%>
+    <% if Manga.new.can_edit? current_user %>
+        <%=link_to "Add Manga", new_manga_path, class: "has-background-dark has-text-light p-2"%>
+    <%end%>
+    <% if user_signed_in? %>
+        <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "has-background-dark has-text-light p-2"%>
+        <span>Logged in as <%=current_user.email%></span>
+    <%else%>
+        <%=link_to "Login", new_user_session_path, class: "has-background-dark has-text-light p-2"%>
+        <%=link_to "Sign Up", new_user_registration_path, class: "has-background-dark has-text-light p-2"%>
+    <%end%>
 </nav>

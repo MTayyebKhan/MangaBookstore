@@ -1,6 +1,9 @@
 class MangasController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create]
+    before_action :check_role, only: [:new, :create]
     before_action :read_mangas, only: [:index]
     before_action :set_manga, only: [:show]
+
     def index
     end
 
@@ -37,5 +40,13 @@ class MangasController < ApplicationController
     end
     def manga_params
         params.require(:manga).permit(:title, :writer, genres: [], writer_attributes: [:first_name, :last_name])
+    end
+    def check_role
+        if Manga.new.can_edit? current_user
+            return
+        else
+            flash[:alert] = "You have not been authorised!"
+            redirect_to root_path
+        end
     end
 end
