@@ -6,17 +6,22 @@
         <%=form.text_field :title, required:true%>
     </div>
     <div class="p-2">
-        <%=form.label :genre%>
-        <%=form.text_field :genre%>
+        <%=form.label :genres%>
+        <%=form.collection_check_boxes :genres, Genre.order(:name), :id, :name %>
     </div>
     <h2>Writer:</h2>
     <div class="p-2">
-        <%=form.label :writer_first_name%>
-        <%=form.text_field :writer_first_name, required:true%>
+        <%=form.collection_select :writer, Writer.order(:last_name), :id, :name%>
     </div>
-    <div class="p-2">
-        <%=form.label :writer_last_name%>
-        <%=form.text_field :writer_last_name, required:true%>
-    </div>
+    <%=form.fields_for :writer do |writer_form|%>
+        <div class="p-2">
+            <%=writer_form.label :first_name%>
+            <%=writer_form.text_field :first_name%>
+        </div>
+        <div class="p-2">
+            <%=writer_form.label :last_name%>
+            <%=writer_form.text_field :last_name%>
+        </div>
+    <%end%>
     <%=form.submit "Add Manga"%>
 <%end%>

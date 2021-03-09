@@ -8,17 +8,22 @@ class MangasController < ApplicationController
     end
 
     def create
-        writer = Writer.find_by_name(manga_params[:writer_first_name], manga_params[:writer_last_name])
 
-        writer = writer || Writer.new(first_name: manga_params[:writer_first_name], last_name: manga_params[:writer_last_name])
+        writer_params = manga_params[:writer_attributes]
+        if !writer_params[:first_name].empty? && !writer_params[:last_name].empty?
+            @writer = Writer.create(writer_params)
+        else
+            @writer = Writer.find(manga_params[:writer])
+        end
 
-        manga = Manga.create(title: manga_params[:title], genre: manga_params[:genre], writer: writer)
+        manga = Manga.create(title: manga_params[:title], genre_ids: manga_params[:genres], writer: @writer)
 
-        redirect_to manga_path(book.id)
+        redirect_to manga_path(manga.id)
     end
 
     def new
         @manga = Manga.new
+        @manga.build_writer
     end
 
     private
@@ -31,6 +36,6 @@ class MangasController < ApplicationController
         end
     end
     def manga_params
-        params.require(:manga).permit(:title)
+        params.require(:manga).permit(:title, :writer, genres: [], writer_attributes: [:first_name, :last_name])
     end
 end
