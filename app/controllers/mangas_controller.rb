@@ -19,7 +19,8 @@ class MangasController < ApplicationController
             @writer = Writer.find(manga_params[:writer])
         end
 
-        manga = Manga.create(title: manga_params[:title], genre_ids: manga_params[:genres], writer: @writer)
+        manga = Manga.create(title: manga_params[:title], price: manga_params[:price], genre_ids: manga_params[:genres], writer: @writer)
+        manga.cover.attach(manga_params[:cover])
 
         redirect_to manga_path(manga.id)
     end
@@ -39,7 +40,7 @@ class MangasController < ApplicationController
         end
     end
     def manga_params
-        params.require(:manga).permit(:title, :writer, genres: [], writer_attributes: [:first_name, :last_name])
+        params.require(:manga).permit(:title, :cover, :price, :writer, genres: [], writer_attributes: [:first_name, :last_name])
     end
     def check_role
         if Manga.new.can_edit? current_user
