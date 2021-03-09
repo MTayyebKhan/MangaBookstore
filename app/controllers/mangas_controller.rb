@@ -1,8 +1,8 @@
 class MangasController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :create]
-    before_action :check_role, only: [:new, :create]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    before_action :check_role, only: [:new, :create, :edit, :update, :destroy]
     before_action :read_mangas, only: [:index]
-    before_action :set_manga, only: [:show]
+    before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
     def index
     end
@@ -11,8 +11,8 @@ class MangasController < ApplicationController
     end
 
     def create
-
         writer_params = manga_params[:writer_attributes]
+
         if !writer_params[:first_name].empty? && !writer_params[:last_name].empty?
             @writer = Writer.create(writer_params)
         else
@@ -28,6 +28,30 @@ class MangasController < ApplicationController
     def new
         @manga = Manga.new
         @manga.build_writer
+    end
+
+    def edit
+        @manga.genres.build
+    end
+
+    def update
+        writer_params = manga_params[:writer_attributes]
+        if !writer_params[:first_name].empty? && !writer_params[:last_name].empty?
+          @writer = Writer.where(first_name: writer_params[:first_name], last_name: writer_params[:last_name]).first
+          if @writer.nil?
+            @writer = Writer.create(writer_params)
+          end
+        else
+          @writer = Writer.find(manga_params[:writer])
+        end
+        @manga.update(title: manga_params[:title], price: manga_params[:price], genre_ids: manga_params[:genres], writer: @writer)
+        @manga.cover.attach(manga_params[:cover]) if manga_params.has_key?(:cover)
+        redirect_to @manga
+    end
+
+    def destroy
+        @manga.destroy
+        redirect_to root_path
     end
 
     private

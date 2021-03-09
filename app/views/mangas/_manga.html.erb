@@ -6,5 +6,9 @@
     <p>Writer: <%=link_to manga.writer.name, writer_path(manga.writer.id)%></p>
     <p>Genres: <%=manga.list_genres%></p>
     <p><%=number_to_currency manga.price%></p>
-    <p><%=link_to "Buy Now", new_order_path(manga_id: manga.id)%></p>
+    <p>
+        <%= link_to "Buy Now", new_order_path(manga_id: manga.id) %> |
+        <%= link_to "Edit", edit_manga_path(manga) %> |
+        <%= link_to "Delete", manga_path(manga), method: :delete, data: { confirm: "Are you sure?"} %>
+    </p>
 </section>

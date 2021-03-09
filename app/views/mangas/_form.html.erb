@@ -1,0 +1,33 @@
+<%= form_with model: @manga do |form|%>
+    <div class="p-2">
+        <%=form.label :title%>
+        <%=form.text_field :title, required:true%>
+    </div>
+    <div class="p-2">
+        <%=form.label :price%>
+        <%=form.number_field :price, step: 0.05, in: 1..1000%>
+    </div>
+    <div class="p-2">
+        <%=form.label :cover%>
+        <%=form.file_field :cover%>
+    </div>
+    <div class="p-2">
+        <%=form.label :genres%>
+        <%=form.collection_check_boxes :genres, Genre.order(:name), :id, :name %>
+    </div>
+    <h2>Writer:</h2>
+    <div class="p-2">
+        <%=form.collection_select :writer, Writer.order(:last_name), :id, :name%>
+    </div>
+    <%=form.fields_for :writer do |writer_form|%>
+        <div class="p-2">
+            <%=writer_form.label :first_name%>
+            <%=writer_form.text_field :first_name%>
+        </div>
+        <div class="p-2">
+            <%=writer_form.label :last_name%>
+            <%=writer_form.text_field :last_name%>
+        </div>
+    <%end%>
+    <%=form.submit "Add Manga"%>
+<%end%>

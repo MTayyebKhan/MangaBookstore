@@ -1,6 +1,6 @@
 class Manga < ApplicationRecord
   belongs_to :writer
-  has_many :mangas_genres
+  has_many :mangas_genres, dependent: :destroy
   has_many :genres, through: :mangas_genres
   accepts_nested_attributes_for :writer
   has_one_attached :cover
