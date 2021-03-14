@@ -7,6 +7,10 @@ class MangasController < ApplicationController
     def index
     end
 
+    def search
+        @mangas = Manga.where("title LIKE ?","%" + params[:q] + "%")
+    end
+
     def show
     end
 
@@ -64,7 +68,7 @@ class MangasController < ApplicationController
         end
     end
     def manga_params
-        params.require(:manga).permit(:title, :cover, :price, :writer, genres: [], writer_attributes: [:first_name, :last_name])
+        params.require(:manga).permit(:title, :cover, :price, :writer, :volume, genres: [], writer_attributes: [:first_name, :last_name])
     end
     def check_role
         if Manga.new.can_edit? current_user

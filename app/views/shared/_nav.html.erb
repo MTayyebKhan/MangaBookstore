@@ -8,7 +8,7 @@
         <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "has-background-dark has-text-light p-2"%>
         <span>Logged in as <%=current_user.email%></span>
     <%else%>
-        <%=link_to "Login", new_user_session_path, class: "has-background-dark has-text-light p-2"%>
-        <%=link_to "Sign Up", new_user_registration_path, class: "has-background-dark has-text-light p-2"%>
+        <%=link_to "Login", new_user_session_path, class: "has-background-success has-text-light p-2"%>
+        <%=link_to "Sign Up", new_user_registration_path, class: "has-background-danger has-text-light p-2"%>
     <%end%>
 </nav>

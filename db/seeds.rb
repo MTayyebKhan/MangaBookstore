@@ -10,7 +10,6 @@ togashi = Writer.create(first_name: "Yoshihiro", last_name: "Togashi")
 oda = Writer.create(first_name: "Eiichiro", last_name: "Oda")
 miura = Writer.create(first_name: "Kentaro", last_name: "Miura")
 
-
 action = Genre.create(name: "Action")
 adventure = Genre.create(name: "Adventure")
 comedy = Genre.create(name: "Comedy")
