@@ -1,24 +1,40 @@
-# README
+# Rails Marketplace App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Heroku Live App Site
+https://mighty-fjord-91560.herokuapp.com/
 
-Things you may want to cover:
+### Github repo
 
-* Ruby version
+https://github.com/MTayyebKhan/railsapp
 
-* System dependencies
+## Identification of the problem you are trying to solve by building this particular marketplace app.
 
-* Configuration
 
-* Database creation
+# Why is it a problem that needs solving?
 
-* Database initialization
 
-* How to run the test suite
+# Description of your marketplace app (website), including:
+- Purpose
+- Functionality / features
+- Sitemap
+- Screenshots
+- Target audience
+- Tech stack (e.g. html, css, deployment platform, etc)
 
-* Services (job queues, cache servers, search engines, etc.)
+# User stories for your app
 
-* Deployment instructions
+# Wireframes for your app
 
-* ...
+# An ERD for your app
+
+# Explain the different high-level components (abstractions) in your app
+
+# Detail any third party services that your app will use
+
+# Describe your projects models in terms of the relationships (active record associations) they have with each other
+
+# Discuss the database relations to be implemented in your application
+
+# Provide your database schema design
+
+# Describe the way tasks are allocated and tracked in your project
