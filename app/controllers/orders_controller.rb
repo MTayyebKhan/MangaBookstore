@@ -25,6 +25,6 @@ class OrdersController < ApplicationController
   end
 
   def cancel 
-    render html: "<h4> The order was cancelled!</h4>".html_safe
+    render html: "<h4> Your order was cancelled!</h4>".html_safe
   end
 end
