@@ -1,6 +1,6 @@
-<% @mangas.each do |manga|%>
+<%@mangas.each do |manga|%>
     <% if manga.cover.attached?%>
-    <%= image_tag manga.cover, width: 150, height: 225%>
+        <%= image_tag manga.cover, width: 150, height: 225%>
     <%end%>
     <p><%=link_to manga.title, manga_path(manga.id)%></p>
 <%end%>

@@ -1,7 +1,8 @@
+<div class="content has-background-dark">
 <nav class="navbar">
   <div class="navbar-item has-dropdown is-hoverable">
     <a class="navbar-link has-background-dark is-arrowless">
-      Menu
+       MANGASTORE 
     </a>
     <div class="navbar-dropdown has-background-dark">
         <%=link_to "Mangas", mangas_path, class: "navbar-item has-background-dark has-text-light"%>
@@ -13,9 +14,10 @@
             <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-item has-background-dark has-text-light"%>
             <span><%=current_user.email%></span>
         <%else%>
-            <%=link_to "Login", new_user_session_path, class: "navbar-item has-background-success has-text-light"%>
-            <%=link_to "Sign Up", new_user_registration_path, class: "navbar-item has-background-danger has-text-light"%>
+            <%=link_to "Login", new_user_session_path, class: "navbar-item has-background-dark has-text-light"%>
+            <%=link_to "Sign Up", new_user_registration_path, class: "navbar-item has-background-dark has-text-light"%>
         <%end%>
         </div>
     </div>
 </nav>
+</div>

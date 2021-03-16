@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div>
+<div class="hero is-danger is-fullheight">
   <html>
     <head>
       <title>MangaStore</title>
@@ -10,13 +10,13 @@
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
     <body>
-      <section class="hero is-danger is-fullheight">
+            
         <div class="content has-text-centered">
           <%=render "shared/nav"%>
             <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
           <%= yield %>
-        </section>
+        </div>
     </body>
   </html>
 </div>
