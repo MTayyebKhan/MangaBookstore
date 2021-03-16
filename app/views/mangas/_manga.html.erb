@@ -1,9 +1,9 @@
-<section class="card">
+<section class="content">
     <h1><%=manga.title%></h1>
     <% if manga.cover.attached?%>
         <%= image_tag manga.cover, width: 120%>
     <%end%>
-    <p>Writer: <%=link_to manga.writer.name, writer_path(manga.writer.id)%></p>
+    <p>Volume: <%=link_to manga.writer.name, writer_path(manga.writer.id)%></p>
     <p>Genres: <%=manga.list_genres%></p>
     <p><%=number_to_currency manga.price%></p>
     <p>

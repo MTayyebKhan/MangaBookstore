@@ -6,11 +6,7 @@ class MangasController < ApplicationController
 
     def index
     end
-
-    def search
-        @mangas = Manga.where("title LIKE ?","%" + params[:q] + "%")
-    end
-
+    
     def show
     end
 

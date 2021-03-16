@@ -1,14 +1,21 @@
-<nav class="content">
-    <%=link_to "Mangas", mangas_path, class: "has-background-dark has-text-light p-2"%>
-    <%=link_to "Writers", writers_path, class: "has-background-dark has-text-light p-2"%>
-    <% if Manga.new.can_edit? current_user %>
-        <%=link_to "Add Manga", new_manga_path, class: "has-background-dark has-text-light p-2"%>
-    <%end%>
-    <% if user_signed_in? %>
-        <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "has-background-dark has-text-light p-2"%>
-        <span>Logged in as <%=current_user.email%></span>
-    <%else%>
-        <%=link_to "Login", new_user_session_path, class: "has-background-success has-text-light p-2"%>
-        <%=link_to "Sign Up", new_user_registration_path, class: "has-background-danger has-text-light p-2"%>
-    <%end%>
+<nav class="navbar-end">
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link has-background-dark">
+      Menu
+    </a>
+    <div class="navbar-dropdown">
+        <%=link_to "Mangas", mangas_path, class: "navbar-item has-background-dark has-text-light"%>
+        <%=link_to "Creators", writers_path, class: "navbar-item has-background-dark has-text-light"%>
+        <% if Manga.new.can_edit? current_user %>
+            <%=link_to "Add Manga", new_manga_path, class: "navbar-item has-background-dark has-text-light"%>
+        <%end%>
+        <% if user_signed_in? %>
+            <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-item has-background-dark has-text-light"%>
+            <span>Logged in as <%=current_user.email%></span>
+        <%else%>
+            <%=link_to "Login", new_user_session_path, class: "navbar-item has-background-success has-text-light"%>
+            <%=link_to "Sign Up", new_user_registration_path, class: "navbar-item has-background-danger has-text-light"%>
+        <%end%>
+        </div>
+    </div>
 </nav>

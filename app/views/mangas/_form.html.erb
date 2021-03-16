@@ -15,7 +15,7 @@
         <%=form.label :genres%>
         <%=form.collection_check_boxes :genres, Genre.order(:name), :id, :name %>
     </div>
-    <h2>Writer:</h2>
+    <h2>Creator:</h2>
     <div class="p-2">
         <%=form.collection_select :writer, Writer.order(:last_name), :id, :name%>
     </div>
@@ -29,5 +29,5 @@
             <%=writer_form.text_field :last_name%>
         </div>
     <%end%>
-    <%=form.submit "Add Manga"%>
+    <%=form.submit "Confirm"%>
 <%end%>
