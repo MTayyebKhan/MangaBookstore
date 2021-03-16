@@ -1,9 +1,9 @@
-<nav class="navbar-end">
+<nav class="navbar">
   <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link has-background-dark">
+    <a class="navbar-link has-background-dark is-arrowless">
       Menu
     </a>
-    <div class="navbar-dropdown">
+    <div class="navbar-dropdown has-background-dark">
         <%=link_to "Mangas", mangas_path, class: "navbar-item has-background-dark has-text-light"%>
         <%=link_to "Creators", writers_path, class: "navbar-item has-background-dark has-text-light"%>
         <% if Manga.new.can_edit? current_user %>
@@ -11,7 +11,7 @@
         <%end%>
         <% if user_signed_in? %>
             <%=link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-item has-background-dark has-text-light"%>
-            <span>Logged in as <%=current_user.email%></span>
+            <span><%=current_user.email%></span>
         <%else%>
             <%=link_to "Login", new_user_session_path, class: "navbar-item has-background-success has-text-light"%>
             <%=link_to "Sign Up", new_user_registration_path, class: "navbar-item has-background-danger has-text-light"%>
