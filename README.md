@@ -165,7 +165,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 - HTML
 - CSS
 - SASS
-- Balsamiq
+- Postgres
 - Javascript / JQuery
 - Ruby on Rails
 - Stripe
@@ -267,8 +267,6 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 <br>
 <br>
 
-# ERD
-
 # High-level components
 
 - Logging in / Signing Up
@@ -296,7 +294,6 @@ Limitations have been placed to normal users. Rolify, a gem for Rails, allows a 
 - Bulma: a styling gem.
 - Stripe: a cloud payment service.
 
-
 # Model relationships
 
 Genre - Stores the genres
@@ -315,7 +312,6 @@ MangasGenre - Stores the Genre to the manga
 
 - Belongs to manga
 - Belongs to genre
-
 
 Role - Stores user information
 
@@ -339,7 +335,53 @@ This relationship is used when a single record in one table has many related rec
 
 This relationship allows for records in table 1 to have many related records in table 2 and vice versa. Example: Mangas can have many genres and genres can have many mangas.
 
-# Provide your database schema design
+# ERD
+
+<img src="docs/erd.png">
+
+<br>
+<br>
+
+# Database schema design
+
+When designing the database schema design I started with the manga, and branched out to to all the relationships that would be found within the application.
+
+A manga would have at least one genre and at least one writer. This is factor lead to who would be able to add mangas within the application with genres being added to the list for easier searching capabilities.
+
+A user can both be many writers or just a website user but the one who is given admin role has the ability to add or edit a manga. This leads to control over the application of what can and can not be sold or purchased via authorisation.
+
+Building in respect to the user experience this way, I found it simple to outline the basic requirements of each model relative to each other, and to map out the specific data I wanted each to contain.
+
+All this is done by manipulating the Active Record associations aka the t.strings or t.references, simplifying the layout of data:
+
+User:
+
+        Email: string
+        Password: string
+
+Manga:
+
+        Title: string
+        References: writer
+
+Writer:
+
+        First_name: string
+        Last_name: string
+
+Genre:
+
+        Name: string
+
+Role:
+
+        Name: string
+
+MangaGenre:
+
+        Manga: reference
+        Genre: reference
+
 
 # Describe the way tasks are allocated and tracked in your project
 
