@@ -59,7 +59,102 @@ The main functionality and feature of this application is the minimalistic inter
 
 ## Sitemap
 
+<img src="docs/sitemap.png">
+
+<br>
+<br>
+
 ## Screenshots
+
+### Landing Page
+
+<br>
+
+<img src="docs/landing.png">
+
+<br>
+<br>
+
+### Viewing Page
+
+<br>
+
+<img src="docs/view.png">
+
+<br>
+<br>
+
+### Writers Page
+
+<br>
+
+<img src="docs/writers.png">
+
+<br>
+<br>
+
+### Login Page
+
+<br>
+
+<img src="docs/login.png">
+
+<br>
+<br>
+
+### Signup Page
+
+<br>
+
+<img src="docs/signup.png">
+
+<br>
+<br>
+
+### Buy Page
+
+<br>
+
+<img src="docs/buy.png">
+
+<br>
+<br>
+
+### Edit/Create Page
+
+<br>
+
+<img src="docs/create.png">
+
+<br>
+<br>
+
+### Stripe Page
+
+<br>
+
+<img src="docs/stripe.png">
+
+<br>
+<br>
+
+### Desktop Nav
+
+<br>
+
+<img src="docs/adminnav.png">
+
+<br>
+<br>
+
+### Mobile View
+
+<br>
+
+<img src="docs/mobile.png">
+
+<br>
+<br>
 
 ## Target audience
 
@@ -70,6 +165,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 - HTML
 - CSS
 - SASS
+- Balsamiq
 - Javascript / JQuery
 - Ruby on Rails
 - Stripe
@@ -98,6 +194,78 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 - As an admin I should be able to perform all normal user roles.
 
 # Wireframes
+
+### Landing Page
+
+<br>
+
+<img src="docs/homemock.png">
+
+<br>
+<br>
+
+### Viewing Page
+
+<br>
+
+<img src="docs/mockview.png">
+
+<br>
+<br>
+
+### Writers Page
+
+<br>
+
+<img src="docs/mockwriters.png">
+
+<br>
+<br>
+
+### Login Page
+
+<br>
+
+<img src="docs/mocklogin.png">
+
+<br>
+<br>
+
+### Signup Page
+
+<br>
+
+<img src="docs/mocksign.png">
+
+<br>
+<br>
+
+### Create Page
+
+<br>
+
+<img src="docs/mockadd.png">
+
+<br>
+<br>
+
+### Edit Page
+
+<br>
+
+<img src="docs/mockedit.png">
+
+<br>
+<br>
+
+### Forgot Password Page
+
+<br>
+
+<img src="docs/mockforgot.png">
+
+<br>
+<br>
 
 # ERD
 
