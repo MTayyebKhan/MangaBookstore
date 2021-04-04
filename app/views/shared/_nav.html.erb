@@ -7,7 +7,7 @@
     <div class="navbar-dropdown has-background-dark">
         <%=link_to "Mangas", mangas_path, class: "navbar-item has-background-dark has-text-light"%>
         <%=link_to "Creators", writers_path, class: "navbar-item has-background-dark has-text-light"%>
-        <% if Manga.new.can_edit? current_user %>
+        <% if user_signed_in? %>
             <%=link_to "Add Manga", new_manga_path, class: "navbar-item has-background-dark has-text-light"%>
         <%end%>
         <% if user_signed_in? %>

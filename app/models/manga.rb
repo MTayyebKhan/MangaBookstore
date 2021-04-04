@@ -1,4 +1,5 @@
 class Manga < ApplicationRecord
+  belongs_to :user
   belongs_to :writer
   has_many :mangas_genres, dependent: :destroy
   has_many :genres, through: :mangas_genres

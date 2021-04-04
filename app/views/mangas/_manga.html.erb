@@ -7,8 +7,10 @@
     <p>Genres: <%=manga.list_genres%></p>
     <p><%=number_to_currency manga.price%></p>
     <p>
-        <%= link_to "Buy Now", new_order_path(manga_id: manga.id) %> |
+        <%= link_to "Buy Now", new_order_path(manga_id: manga.id) %> 
+        <% if ((Manga.new.can_edit? current_user) or (user_signed_in? && current_user == manga.user)) %> |
         <%= link_to "Edit", edit_manga_path(manga) %> |
         <%= link_to "Delete", manga_path(manga), method: :delete, data: { confirm: "Are you sure?"} %>
+        <%end%>
     </p>
 </section>

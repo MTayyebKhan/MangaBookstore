@@ -1,6 +1,6 @@
 class MangasController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-    before_action :check_role, only: [:new, :create, :edit, :update, :destroy]
+    before_action :check_role, only: [:edit, :update, :destroy]
     before_action :read_mangas, only: [:index]
     before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
@@ -19,7 +19,7 @@ class MangasController < ApplicationController
             @writer = Writer.find(manga_params[:writer])
         end
 
-        manga = Manga.create(title: manga_params[:title], price: manga_params[:price], genre_ids: manga_params[:genres], writer: @writer)
+        manga = Manga.create(title: manga_params[:title], price: manga_params[:price], genre_ids: manga_params[:genres], writer: @writer, user: current_user)
         manga.cover.attach(manga_params[:cover])
 
         redirect_to manga_path(manga.id)
@@ -67,6 +67,12 @@ class MangasController < ApplicationController
         params.require(:manga).permit(:title, :cover, :price, :writer, :volume, genres: [], writer_attributes: [:first_name, :last_name])
     end
     def check_role
+        if params[:id]
+            @manga = Manga.find(params[:id])
+            if @manga.user_id == current_user.id
+                 return
+            end
+        end
         if Manga.new.can_edit? current_user
             return
         else
