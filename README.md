@@ -59,7 +59,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 ## Sitemap
 
-<img src="../docs/sitemap.png">
+<img src="docs/sitemap.png">
 
 <br>
 <br>
@@ -70,7 +70,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/landing.png">
+<img src="docs/landing.png">
 
 <br>
 <br>
@@ -79,7 +79,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/view.png">
+<img src="docs/view.png">
 
 <br>
 <br>
@@ -88,7 +88,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/writers.png">
+<img src="docs/writers.png">
 
 <br>
 <br>
@@ -97,7 +97,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/login.png">
+<img src="docs/login.png">
 
 <br>
 <br>
@@ -106,7 +106,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/signup.png">
+<img src="docs/signup.png">
 
 <br>
 <br>
@@ -115,7 +115,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/buy.png">
+<img src="docs/buy.png">
 
 <br>
 <br>
@@ -124,7 +124,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/create.png">
+<img src="docs/create.png">
 
 <br>
 <br>
@@ -133,7 +133,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/stripe.png">
+<img src="docs/stripe.png">
 
 <br>
 <br>
@@ -142,7 +142,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/adminnav.png">
+<img src="docs/adminnav.png">
 
 <br>
 <br>
@@ -151,7 +151,7 @@ The main functionality and feature of this application is the minimalistic inter
 
 <br>
 
-<img src="../docs/mobile.png">
+<img src="docs/mobile.png">
 
 <br>
 <br>
@@ -199,7 +199,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/homemock.png">
+<img src="docs/homemock.png">
 
 <br>
 <br>
@@ -208,7 +208,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mockview.png">
+<img src="docs/mockview.png">
 
 <br>
 <br>
@@ -217,7 +217,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mockwriters.png">
+<img src="docs/mockwriters.png">
 
 <br>
 <br>
@@ -226,7 +226,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mocklogin.png">
+<img src="docs/mocklogin.png">
 
 <br>
 <br>
@@ -235,7 +235,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mocksign.png">
+<img src="docs/mocksign.png">
 
 <br>
 <br>
@@ -244,7 +244,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mockadd.png">
+<img src="docs/mockadd.png">
 
 <br>
 <br>
@@ -253,7 +253,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mockedit.png">
+<img src="docs/mockedit.png">
 
 <br>
 <br>
@@ -262,7 +262,7 @@ Mangastore is designed to target individuals who are into the comic and manga ge
 
 <br>
 
-<img src="../docs/mockforgot.png">
+<img src="docs/mockforgot.png">
 
 <br>
 <br>
@@ -337,7 +337,7 @@ This relationship allows for records in table 1 to have many related records in 
 
 # ERD
 
-<img src="../docs/erd.png">
+<img src="docs/erd.png">
 
 <br>
 <br>
